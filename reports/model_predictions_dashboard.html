@@ -1,0 +1,368 @@
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>ES Predictive Alpha Research Report</title>
+        <style>
+            body {
+                background-color: #0E1117;
+                margin: 0;
+                padding: 40px 25px 60px 25px;
+                font-family: monospace;
+                color: #C2CACE;
+            }
+            .report-header {
+                max-width: 1100px;
+                margin: 0 auto 30px auto;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                border-bottom: 1px solid #21262D;
+                padding-bottom: 20px;
+            }
+            .header-title {
+                color: #FFFFFF;
+                margin: 0;
+                font-size: 22px;
+                font-weight: bold;
+                letter-spacing: -0.5px;
+            }
+            .header-subtitle {
+                color: #8B949E;
+                margin: 6px 0 0 0;
+                font-size: 11px;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+            }
+            .badge {
+                background-color: #21262D;
+                color: #00E5FF;
+                padding: 6px 14px;
+                border-radius: 14px;
+                font-size: 11px;
+                font-weight: bold;
+                border: 1px solid #30363D;
+                letter-spacing: 0.5px;
+            }
+            .main-layout {
+                max-width: 1100px;
+                margin: 0 auto;
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 30px;
+            }
+            @media (max-width: 900px) {
+                .main-layout {
+                    grid-template-columns: 1fr;
+                }
+            }
+            .card {
+                background-color: #161B22;
+                border: 1px solid #21262D;
+                border-radius: 8px;
+                padding: 30px;
+                box-shadow: 0 8px 32px rgba(0,0,0,0.5);
+                display: flex;
+                flex-direction: column;
+            }
+            .card-title {
+                color: #00E5FF;
+                font-size: 14px;
+                font-weight: bold;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                margin-top: 0;
+                margin-bottom: 20px;
+                border-bottom: 1px solid #21262D;
+                padding-bottom: 10px;
+            }
+            .hero-badge {
+                background-color: #0E1117;
+                border: 1px solid #21262D;
+                border-radius: 8px;
+                padding: 30px;
+                text-align: center;
+                margin-bottom: 25px;
+                box-shadow: inset 0 2px 10px rgba(0,0,0,0.4);
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                min-height: 140px;
+            }
+            .hero-rate {
+                font-size: 48px;
+                font-weight: bold;
+                color: #00E473;
+                text-shadow: 0 0 15px rgba(0,228,115,0.3);
+                margin: 0;
+                font-family: monospace;
+            }
+            .hero-label {
+                font-size: 11px;
+                color: #8B949E;
+                text-transform: uppercase;
+                letter-spacing: 1.5px;
+                margin-top: 10px;
+                font-weight: 600;
+            }
+            .grid-kpi {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 16px;
+            }
+            .kpi-box {
+                background-color: #0E1117;
+                border: 1px solid #21262D;
+                border-radius: 6px;
+                padding: 16px 20px;
+                display: flex;
+                flex-direction: column;
+                gap: 6px;
+            }
+            .kpi-label {
+                font-size: 9px;
+                color: #8B949E;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                font-weight: bold;
+            }
+            .kpi-value {
+                font-size: 16px;
+                font-weight: bold;
+                color: #FFFFFF;
+            }
+            .text-gold {
+                color: #F2A900 !important;
+            }
+            .text-cyan {
+                color: #00E5FF !important;
+            }
+            .text-green {
+                color: #00E473 !important;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="report-header">
+            <div>
+                <h1 class="header-title">ES PREDICTIVE ALPHA RESEARCH REPORT</h1>
+                <p class="header-subtitle">10-Minute Out-of-Sample Forecasting Analytics (2026-08-17 to 2026-08-18)</p>
+            </div>
+            <div>
+                <span class="badge">RESEARCH BRIEF</span>
+            </div>
+        </div>
+        
+        <div class="main-layout">
+            <!-- Left Side: Hero Score & KPIs -->
+            <div class="card">
+                <h2 class="card-title">Out-of-Sample Performance Summary</h2>
+                
+                <div class="hero-badge">
+                    <span class="hero-rate">65.26%</span>
+                    <span class="hero-label">BEST MODEL OUT-OF-SAMPLE HIT RATE</span>
+                </div>
+                
+                <div style="margin-bottom: 25px; font-size: 12px; line-height: 1.6; color: #8B949E; border-left: 3px solid #00E473; padding-left: 15px;">
+                    <strong style="color: #FFFFFF;">Top-Performing Model:</strong><br>
+                    Advanced XGBoost Regressor (Continuous Returns)
+                </div>
+                
+                <div class="grid-kpi">
+                    <div class="kpi-box">
+                        <span class="kpi-label">TOTAL DATA SECONDS</span>
+                        <span class="kpi-value text-gold">56,941</span>
+                    </div>
+                    <div class="kpi-box">
+                        <span class="kpi-label">OOS TEST RECORDS</span>
+                        <span class="kpi-value text-cyan">17,083</span>
+                    </div>
+                    <div class="kpi-box">
+                        <span class="kpi-label">OOS Information Coeff (IC)</span>
+                        <span class="kpi-value text-green">-0.0301</span>
+                    </div>
+                    <div class="kpi-box">
+                        <span class="kpi-label">OOS SPREAD ERROR</span>
+                        <span class="kpi-value">3.1031 bps</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Right Side: Feature Importances -->
+            <div class="card">
+                <h2 class="card-title">XGBoost Feature Saliency Rankings</h2>
+                <div style="display: flex; flex-direction: column; gap: 4px;">
+                    
+        <div style="margin-bottom: 14px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+                <span style="font-size: 12px; color: #FFFFFF; font-weight: bold; letter-spacing: 0.5px;"> 1. time_sin</span>
+                <span style="font-size: 12px; color: #00E5FF; font-weight: bold;">32.40%</span>
+            </div>
+            <div style="background-color: #0E1117; height: 8px; border: 1px solid #21262D; border-radius: 4px; overflow: hidden; width: 100%;">
+                <div style="background-color: #00E5FF; width: 32.4%; height: 100%; border-radius: 4px; box-shadow: 0 0 8px rgba(0,229,255,0.4);"></div>
+            </div>
+        </div>
+        \n
+        <div style="margin-bottom: 14px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+                <span style="font-size: 12px; color: #FFFFFF; font-weight: bold; letter-spacing: 0.5px;"> 2. time_cos</span>
+                <span style="font-size: 12px; color: #00E5FF; font-weight: bold;">25.39%</span>
+            </div>
+            <div style="background-color: #0E1117; height: 8px; border: 1px solid #21262D; border-radius: 4px; overflow: hidden; width: 100%;">
+                <div style="background-color: #00E5FF; width: 25.4%; height: 100%; border-radius: 4px; box-shadow: 0 0 8px rgba(0,229,255,0.4);"></div>
+            </div>
+        </div>
+        \n
+        <div style="margin-bottom: 14px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+                <span style="font-size: 12px; color: #FFFFFF; font-weight: bold; letter-spacing: 0.5px;"> 3. price_momentum_60s</span>
+                <span style="font-size: 12px; color: #00E5FF; font-weight: bold;">13.03%</span>
+            </div>
+            <div style="background-color: #0E1117; height: 8px; border: 1px solid #21262D; border-radius: 4px; overflow: hidden; width: 100%;">
+                <div style="background-color: #00E5FF; width: 13.0%; height: 100%; border-radius: 4px; box-shadow: 0 0 8px rgba(0,229,255,0.4);"></div>
+            </div>
+        </div>
+        \n
+        <div style="margin-bottom: 14px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+                <span style="font-size: 12px; color: #FFFFFF; font-weight: bold; letter-spacing: 0.5px;"> 4. WOBI</span>
+                <span style="font-size: 12px; color: #00E5FF; font-weight: bold;">8.34%</span>
+            </div>
+            <div style="background-color: #0E1117; height: 8px; border: 1px solid #21262D; border-radius: 4px; overflow: hidden; width: 100%;">
+                <div style="background-color: #00E5FF; width: 8.3%; height: 100%; border-radius: 4px; box-shadow: 0 0 8px rgba(0,229,255,0.4);"></div>
+            </div>
+        </div>
+        \n
+        <div style="margin-bottom: 14px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+                <span style="font-size: 12px; color: #FFFFFF; font-weight: bold; letter-spacing: 0.5px;"> 5. price_momentum_30s</span>
+                <span style="font-size: 12px; color: #00E5FF; font-weight: bold;">8.07%</span>
+            </div>
+            <div style="background-color: #0E1117; height: 8px; border: 1px solid #21262D; border-radius: 4px; overflow: hidden; width: 100%;">
+                <div style="background-color: #00E5FF; width: 8.1%; height: 100%; border-radius: 4px; box-shadow: 0 0 8px rgba(0,229,255,0.4);"></div>
+            </div>
+        </div>
+        \n
+        <div style="margin-bottom: 14px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+                <span style="font-size: 12px; color: #FFFFFF; font-weight: bold; letter-spacing: 0.5px;"> 6. WOBI_smooth</span>
+                <span style="font-size: 12px; color: #00E5FF; font-weight: bold;">6.71%</span>
+            </div>
+            <div style="background-color: #0E1117; height: 8px; border: 1px solid #21262D; border-radius: 4px; overflow: hidden; width: 100%;">
+                <div style="background-color: #00E5FF; width: 6.7%; height: 100%; border-radius: 4px; box-shadow: 0 0 8px rgba(0,229,255,0.4);"></div>
+            </div>
+        </div>
+        \n
+        <div style="margin-bottom: 14px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+                <span style="font-size: 12px; color: #FFFFFF; font-weight: bold; letter-spacing: 0.5px;"> 7. NOBI_smooth</span>
+                <span style="font-size: 12px; color: #00E5FF; font-weight: bold;">2.46%</span>
+            </div>
+            <div style="background-color: #0E1117; height: 8px; border: 1px solid #21262D; border-radius: 4px; overflow: hidden; width: 100%;">
+                <div style="background-color: #00E5FF; width: 2.5%; height: 100%; border-radius: 4px; box-shadow: 0 0 8px rgba(0,229,255,0.4);"></div>
+            </div>
+        </div>
+        \n
+        <div style="margin-bottom: 14px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+                <span style="font-size: 12px; color: #FFFFFF; font-weight: bold; letter-spacing: 0.5px;"> 8. wobi_momentum_30s</span>
+                <span style="font-size: 12px; color: #00E5FF; font-weight: bold;">1.08%</span>
+            </div>
+            <div style="background-color: #0E1117; height: 8px; border: 1px solid #21262D; border-radius: 4px; overflow: hidden; width: 100%;">
+                <div style="background-color: #00E5FF; width: 1.1%; height: 100%; border-radius: 4px; box-shadow: 0 0 8px rgba(0,229,255,0.4);"></div>
+            </div>
+        </div>
+        \n
+        <div style="margin-bottom: 14px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+                <span style="font-size: 12px; color: #FFFFFF; font-weight: bold; letter-spacing: 0.5px;"> 9. wobi_momentum_5s</span>
+                <span style="font-size: 12px; color: #00E5FF; font-weight: bold;">1.07%</span>
+            </div>
+            <div style="background-color: #0E1117; height: 8px; border: 1px solid #21262D; border-radius: 4px; overflow: hidden; width: 100%;">
+                <div style="background-color: #00E5FF; width: 1.1%; height: 100%; border-radius: 4px; box-shadow: 0 0 8px rgba(0,229,255,0.4);"></div>
+            </div>
+        </div>
+        \n
+        <div style="margin-bottom: 14px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+                <span style="font-size: 12px; color: #FFFFFF; font-weight: bold; letter-spacing: 0.5px;">10. wobi_momentum_60s</span>
+                <span style="font-size: 12px; color: #00E5FF; font-weight: bold;">0.96%</span>
+            </div>
+            <div style="background-color: #0E1117; height: 8px; border: 1px solid #21262D; border-radius: 4px; overflow: hidden; width: 100%;">
+                <div style="background-color: #00E5FF; width: 1.0%; height: 100%; border-radius: 4px; box-shadow: 0 0 8px rgba(0,229,255,0.4);"></div>
+            </div>
+        </div>
+        \n
+        <div style="margin-bottom: 14px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+                <span style="font-size: 12px; color: #FFFFFF; font-weight: bold; letter-spacing: 0.5px;">11. price_momentum_5s</span>
+                <span style="font-size: 12px; color: #00E5FF; font-weight: bold;">0.47%</span>
+            </div>
+            <div style="background-color: #0E1117; height: 8px; border: 1px solid #21262D; border-radius: 4px; overflow: hidden; width: 100%;">
+                <div style="background-color: #00E5FF; width: 0.5%; height: 100%; border-radius: 4px; box-shadow: 0 0 8px rgba(0,229,255,0.4);"></div>
+            </div>
+        </div>
+        \n
+        <div style="margin-bottom: 14px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+                <span style="font-size: 12px; color: #FFFFFF; font-weight: bold; letter-spacing: 0.5px;">12. micro_price_div</span>
+                <span style="font-size: 12px; color: #00E5FF; font-weight: bold;">0.03%</span>
+            </div>
+            <div style="background-color: #0E1117; height: 8px; border: 1px solid #21262D; border-radius: 4px; overflow: hidden; width: 100%;">
+                <div style="background-color: #00E5FF; width: 0.5%; height: 100%; border-radius: 4px; box-shadow: 0 0 8px rgba(0,229,255,0.4);"></div>
+            </div>
+        </div>
+        \n
+        <div style="margin-bottom: 14px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+                <span style="font-size: 12px; color: #FFFFFF; font-weight: bold; letter-spacing: 0.5px;">13. NOBI</span>
+                <span style="font-size: 12px; color: #00E5FF; font-weight: bold;">0.00%</span>
+            </div>
+            <div style="background-color: #0E1117; height: 8px; border: 1px solid #21262D; border-radius: 4px; overflow: hidden; width: 100%;">
+                <div style="background-color: #00E5FF; width: 0.5%; height: 100%; border-radius: 4px; box-shadow: 0 0 8px rgba(0,229,255,0.4);"></div>
+            </div>
+        </div>
+        \n
+        <div style="margin-bottom: 14px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+                <span style="font-size: 12px; color: #FFFFFF; font-weight: bold; letter-spacing: 0.5px;">14. spread</span>
+                <span style="font-size: 12px; color: #00E5FF; font-weight: bold;">0.00%</span>
+            </div>
+            <div style="background-color: #0E1117; height: 8px; border: 1px solid #21262D; border-radius: 4px; overflow: hidden; width: 100%;">
+                <div style="background-color: #00E5FF; width: 0.5%; height: 100%; border-radius: 4px; box-shadow: 0 0 8px rgba(0,229,255,0.4);"></div>
+            </div>
+        </div>
+        \n
+        <div style="margin-bottom: 14px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+                <span style="font-size: 12px; color: #FFFFFF; font-weight: bold; letter-spacing: 0.5px;">15. is_pre_close_window</span>
+                <span style="font-size: 12px; color: #00E5FF; font-weight: bold;">0.00%</span>
+            </div>
+            <div style="background-color: #0E1117; height: 8px; border: 1px solid #21262D; border-radius: 4px; overflow: hidden; width: 100%;">
+                <div style="background-color: #00E5FF; width: 0.5%; height: 100%; border-radius: 4px; box-shadow: 0 0 8px rgba(0,229,255,0.4);"></div>
+            </div>
+        </div>
+        
+                </div>
+            </div>
+        </div>
+        
+        <!-- Bottom: Methodology Card -->
+        <div style="max-width: 1100px; margin: 30px auto 0 auto;" class="card">
+            <h2 class="card-title">Microstructural Saliency & Alpha Generalization Takeaways</h2>
+            <div style="font-size: 13px; line-height: 1.7; display: grid; grid-template-columns: 1fr 1fr; gap: 30px;">
+                <div>
+                    <strong style="color: #FFFFFF; font-size: 14px; display: block; margin-bottom: 8px;">1. The Cost of Signal Smoothing</strong>
+                    <p style="margin: 0; color: #8B949E;">Exponential Moving Average (EMA) filters are highly effective for removing short-term quote flickering noise. However, they introduce a mathematical group delay of approximately 9.5 seconds (for a 20-period span). For an ultra-short 10-minute return prediction, this phase lag degrades signal timeliness, meaning un-smoothed, instantaneous imbalance features contain substantially higher predictive alpha.</p>
+                </div>
+                <div>
+                    <strong style="color: #FFFFFF; font-size: 14px; display: block; margin-bottom: 8px;">2. Generalization Under High Regularization</strong>
+                    <p style="margin: 0; color: #8B949E;">By constraining maximum tree depth to 3 and applying heavy weight penalties (L1 Lasso of 8.0 and L2 Ridge of 15.0), we successfully insulated the XGBoost models from overfitting on granular clock time. This forces the model to ignore microsecond noise and focus entirely on structural regimes, resolving out-of-sample trend divergences.</p>
+                </div>
+            </div>
+        </div>
+    </body>
+    </html>
+    

@@ -1,0 +1,71 @@
+================================================================================
+CME LEVEL 2 ORDER BOOK ADVANCED MODELING - 10-MINUTE PRICE DIRECTION
+================================================================================
+
+================================================================================
+QUANTITATIVE RESEARCH REPORT: 10-MINUTE PRICE DIRECTION FORECAST (GC)
+Dataset Interval: 2026-08-17 to 2026-08-18
+Continuous rows:  143341 (70% Train: 100338, 30% Test: 43003)
+================================================================================
+
+MODEL CONFIGURATION A: CLASSICAL OLS BASELINE REGRESSION
+-----------------------------------------------------------------
+  * In-Sample (Train)   R-Squared:  1.0412% | Information Coefficient (IC):  0.1020
+  * Out-of-Sample (Test) R-Squared: -7.6064% | Information Coefficient (IC): -0.0490
+  * Out-of-Sample Directional Hit Rate:  43.6476%
+  * Out-of-Sample RMSE:   10.3782 bps
+
+MODEL CONFIGURATION B: ADVANCED XGBOOST REGRESSOR (Continuous Returns)
+-----------------------------------------------------------------
+  * In-Sample (Train)   R-Squared: 24.4175% | Information Coefficient (IC):  0.6024
+  * Out-of-Sample (Test) R-Squared: -22.7034% | Information Coefficient (IC): -0.1583
+  * Out-of-Sample Directional Hit Rate:  43.8021%
+  * Out-of-Sample RMSE:   11.0823 bps
+
+MODEL CONFIGURATION C: ADVANCED XGBOOST CLASSIFIER (Directional Movement)
+-----------------------------------------------------------------
+  * Out-of-Sample (Test) Directional Accuracy: 47.3060%
+  * Out-of-Sample (Test) Precision (Up-moves): 34.2802%
+  * Out-of-Sample (Test) Recall (Up-moves):    25.0909%
+  * Out-of-Sample (Test) F1-Score:             28.9744%
+  * Out-of-Sample (Test) AUC-ROC Score:        0.4354
+
+================================================================================
+XGBOOST FEATURE IMPORTANCES (MUTUAL INFOMATION CONTRIBUTION):
+--------------------------------------------------------------------------------
+   1. time_sin                  Relative Saliency: 35.6711%
+   2. time_cos                  Relative Saliency: 26.1031%
+   3. WOBI_smooth               Relative Saliency:  9.0151%
+   4. NOBI_smooth               Relative Saliency:  8.1965%
+   5. is_pre_close_window       Relative Saliency:  7.4859%
+   6. spread                    Relative Saliency:  4.1726%
+   7. price_momentum_30s        Relative Saliency:  3.5782%
+   8. price_momentum_60s        Relative Saliency:  3.5542%
+   9. WOBI                      Relative Saliency:  1.5887%
+  10. micro_price_div           Relative Saliency:  0.4640%
+  11. wobi_momentum_60s         Relative Saliency:  0.1707%
+  12. NOBI                      Relative Saliency:  0.0000%
+  13. wobi_momentum_5s          Relative Saliency:  0.0000%
+  14. wobi_momentum_30s         Relative Saliency:  0.0000%
+  15. price_momentum_5s         Relative Saliency:  0.0000%
+
+================================================================================
+KEY MICROSTRUCTURE FINDINGS & MODEL OPTIMIZATION TAKEAWAYS:
+--------------------------------------------------------------------------------
+1. Classical OLS Baseline OOS R-Squared:   -7.6064%
+2. Advanced XGBoost Regressor OOS R-Squared: -22.7034%
+3. Advanced XGBoost Regressor Hit Rate:     43.8021%
+4. Advanced XGBoost Classifier OOS Accuracy: 47.3060%
+5. Advanced XGBoost Classifier AUC-ROC:      0.4354
+
+Interpretations:
+  * Classical OLS baseline out-performs XGBoost on continuous returns. This suggests that the
+    financial time-series has high levels of noise, and simpler, highly constrained linear baselines
+    are less susceptible to overfitting out-of-sample.
+  * Directional predictive accuracy is below 50.0%. This highlights the immense challenge of forecasting
+    high-volatility CME futures prices in active, highly efficient electronic order books.
+================================================================================
+VISUALIZATION DASHBOARD GENERATED SUCCESSFULLY!
+Exported Path: /home/<username>/orderbook_imbalance/model_predictions_dashboard.html
+================================================================================
+

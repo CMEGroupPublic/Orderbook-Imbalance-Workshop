@@ -1,0 +1,50 @@
+# ===========================================================================
+# CME Level 2 Order Book Imbalance Pipeline Configuration
+# Centralizes all paths, models, pipeline defaults, and mathematical parameters.
+# ===========================================================================
+
+# Language Model Configurations
+model:
+  name: # "gemini-2.5-pro" (Google Gemini model name)
+  temperature: # 0.0 (Generation temperature)
+  vertexai: # true (Boolean to enable Vertex AI)
+  project_fallback: # "YOUR_GCP_PROJECT_ID" (Fallback Google Cloud Project ID)
+
+# Environment and Workspace Paths
+paths:
+  gcs_bucket: # "YOUR_GCS_BUCKET_NAME" (Google Cloud Storage bucket name)
+  gcs_prefix: # "YOUR_GCS_PREFIX_PATH" (Prefix path within the GCS bucket)
+  output_dir: # "reports" (Directory to save output reports)
+  dashboard_filename: # "model_predictions_dashboard.html" (Default dashboard filename)
+  pipeline_dashboard_template: # "{symbol}_orderbook_imbalance.html" (Template for output reports)
+
+# Default Execution Parameters
+pipeline_defaults:
+  symbol: # "ES" (Default product symbol)
+  start_date: # "YYYY-MM-DD" (Default pipeline start date, e.g., "2026-08-18")
+  end_date: # "YYYY-MM-DD" (Default pipeline end date, e.g., "2026-08-19")
+  reference_today_date: # "YYYY-MM-DD" (Reference date for today, e.g., "2026-08-20")
+
+# Numerical and Calculation Parameters
+parameters:
+  downsample_target_ticks: # 120 (Target downsample tick count)
+  smoothing_span: # 20 (Exponential moving average smoothing span)
+  lookahead_seconds: # 600 (Prediction lookahead window in seconds)
+
+# Contract Specifications for Fallback Mock L2 Data Generation
+contracts:
+  CL:
+    base_price: # 75.0 (Base price for mock Crude Oil contract)
+    tick_size: # 0.01 (Tick size for mock Crude Oil contract)
+  ES:
+    base_price: # 5000.0 (Base price for mock E-mini S&P 500 contract)
+    tick_size: # 0.25 (Tick size for mock E-mini S&P 500 contract)
+  NQ:
+    base_price: # 18000.0 (Base price for mock Nasdaq 100 contract)
+    tick_size: # 0.25 (Tick size for mock Nasdaq 100 contract)
+  GC:
+    base_price: # 2000.0 (Base price for mock Gold contract)
+    tick_size: # 0.10 (Tick size for mock Gold contract)
+  default:
+    base_price: # 100.0 (Fallback base price)
+    tick_size: # 0.01 (Fallback tick size)

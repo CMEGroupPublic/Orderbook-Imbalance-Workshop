@@ -1,0 +1,66 @@
+================================================================================
+CME LEVEL 2 ORDER BOOK ADVANCED MODELING - 10-MINUTE PRICE DIRECTION
+================================================================================
+
+================================================================================
+QUANTITATIVE RESEARCH REPORT: 10-MINUTE PRICE DIRECTION FORECAST (ES)
+Dataset Interval: 2026-08-17 to 2026-08-18
+Continuous rows:  56941 (70% Train: 39858, 30% Test: 17083)
+================================================================================
+
+MODEL CONFIGURATION A: CLASSICAL OLS BASELINE REGRESSION
+-----------------------------------------------------------------
+  * In-Sample (Train)   R-Squared:  4.7263% | Information Coefficient (IC):  0.2174
+  * Out-of-Sample (Test) R-Squared: -31.1814% | Information Coefficient (IC):  0.1543
+  * Out-of-Sample Directional Hit Rate:  45.4679%
+  * Out-of-Sample RMSE:   3.2612 bps
+
+MODEL CONFIGURATION B: ADVANCED XGBOOST REGRESSOR (Continuous Returns)
+-----------------------------------------------------------------
+  * In-Sample (Train)   R-Squared: 31.7707% | Information Coefficient (IC):  0.7460
+  * Out-of-Sample (Test) R-Squared: -18.7704% | Information Coefficient (IC): -0.0301
+  * Out-of-Sample Directional Hit Rate:  65.2639%
+  * Out-of-Sample RMSE:   3.1031 bps
+
+MODEL CONFIGURATION C: ADVANCED XGBOOST CLASSIFIER (Directional Movement)
+-----------------------------------------------------------------
+  * Out-of-Sample (Test) Directional Accuracy: 30.0123%
+  * Out-of-Sample (Test) Precision (Up-moves): 26.6477%
+  * Out-of-Sample (Test) Recall (Up-moves):    97.6639%
+  * Out-of-Sample (Test) F1-Score:             41.8709%
+  * Out-of-Sample (Test) AUC-ROC Score:        0.4865
+
+================================================================================
+XGBOOST FEATURE IMPORTANCES (MUTUAL INFOMATION CONTRIBUTION):
+--------------------------------------------------------------------------------
+   1. time_sin                  Relative Saliency: 32.3999%
+   2. time_cos                  Relative Saliency: 25.3914%
+   3. price_momentum_60s        Relative Saliency: 13.0313%
+   4. WOBI                      Relative Saliency:  8.3354%
+   5. price_momentum_30s        Relative Saliency:  8.0693%
+   6. WOBI_smooth               Relative Saliency:  6.7084%
+   7. NOBI_smooth               Relative Saliency:  2.4603%
+   8. wobi_momentum_30s         Relative Saliency:  1.0764%
+   9. wobi_momentum_5s          Relative Saliency:  1.0687%
+  10. wobi_momentum_60s         Relative Saliency:  0.9636%
+  11. price_momentum_5s         Relative Saliency:  0.4682%
+  12. micro_price_div           Relative Saliency:  0.0271%
+  13. NOBI                      Relative Saliency:  0.0000%
+  14. spread                    Relative Saliency:  0.0000%
+  15. is_pre_close_window       Relative Saliency:  0.0000%
+
+================================================================================
+KEY MICROSTRUCTURE FINDINGS & MODEL OPTIMIZATION TAKEAWAYS:
+--------------------------------------------------------------------------------
+1. Classical OLS Baseline OOS R-Squared:   -31.1814%
+2. Advanced XGBoost Regressor OOS R-Squared: -18.7704%
+3. Advanced XGBoost Regressor Hit Rate:     65.2639%
+4. Advanced XGBoost Classifier OOS Accuracy: 30.0123%
+5. Advanced XGBoost Classifier AUC-ROC:      0.4865
+================================================================================
+
+================================================================================
+VISUALIZATION DASHBOARD GENERATED SUCCESSFULLY!
+Exported Path: /home/<username>/orderbook_imbalance/reports/model_predictions_dashboard.html
+================================================================================
+
